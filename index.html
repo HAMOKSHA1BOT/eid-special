@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eid Mubarak Greetings</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-database-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-analytics-compat.js"></script>
+</head>
+<body>
+    <div class="container noselect">
+        <div class="video-container top-video">
+            <video id="topVideo" class="side-video hidden" autoplay playsinline muted>
+            </video>
+        </div>
+        <div class="video-container left-video">
+            <video id="leftVideo" class="side-video hidden" autoplay playsinline muted>
+            </video>
+        </div>
+        <div class="canvas">
+            <div id="card">
+                <div class="card-front">
+                    <div class="card-content">
+                        <div class="cyber-lines">
+                            <span></span><span></span><span></span><span></span>
+                        </div>
+                        <div class="glowing-elements">
+                            <div class="glow-1"></div>
+                            <div class="glow-2"></div>
+                            <div class="glow-3"></div>
+                        </div>
+                        <div class="card-particles">
+                            <span></span><span></span><span></span><span></span><span></span>
+                            <span></span><span></span><span></span><span></span>
+                            <span></span><span></span><span></span><span></span><span></span>
+                            <span></span><span></span><span></span><span></span>
+                        </div>
+                        <div class="corner-elements">
+                            <span></span><span></span><span></span><span></span>
+                        </div>
+                        <div class="title">EID MUBARAK</div>
+                        <div id="prompt">اضغط لفتح البطاقة</div>
+                        <div class="admin-controls">
+                            <button onclick="toggleAdminLogin()" class="admin-btn">i</button>
+                            <div id="adminLogin" class="admin-login" style="display: none;">
+                                <input type="password" id="adminPassword" placeholder="Password">
+                                <button onclick="loginAdmin()">Login</button>
+                                <button onclick="toggleAdminLogin()">Cancel</button>
+                            </div>
+                        </div>
+                        <div class="admin-actions" id="adminActions" style="display: none;">
+                            <button onclick="deleteAllNames()" class="delete-all-btn">Delete All</button>
+                            <button onclick="toggleSpecialNames()" class="special-names-btn">Special Names</button>
+                        </div>
+                        <div id="specialNamesWindow" class="special-names-window" style="display: none;">
+                            <input type="text" id="specialNameInput" placeholder="Enter special name">
+                            <button onclick="addSpecialName()">Add Special Name</button>
+                            <button onclick="toggleSpecialNames()">Close</button>
+                            <div class="special-names-list">
+                                <h3>Special Names List</h3>
+                                <ul id="specialNamesList"></ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-back">
+                    <div class="card-content">
+                        <div class="cyber-lines">
+                            <span></span><span></span><span></span><span></span>
+                        </div>
+                        <div class="back-content">
+                            <h2>🎉Happy Eid🎉</h2>
+                            <input type="text" id="nameInput" placeholder="Enter your name">
+                            <button onclick="addName()">Add</button>
+                            <div class="names-list">
+                                <h3>Submitted Names</h3>
+                                <ul id="namesList"></ul>
+                            </div>
+                        </div>
+                        <div class="corner-elements">
+                            <span></span><span></span><span></span><span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="video-container right-video">
+            <video id="rightVideo" class="side-video hidden" autoplay playsinline muted>
+            </video>
+        </div>
+        <div id="bottomVideo" class="video-container bottom-video">
+            <video class="side-video hidden" autoplay playsinline></video>
+        </div>
+    </div>
+    <script src="card.js"></script>
+</body>
+</html> 
